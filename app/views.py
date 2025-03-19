@@ -10,4 +10,10 @@ def index(request):
     temperature=api['main']['temp']
     country=api['sys']['country']
     city_name=api["name"]
-    return render(request,"index.html",{'temperature':temperature,"country":country,"city":city_name})
+    humidity=api['main']['humidity']
+    speed = api['wind']['speed']
+    weather=api['weather'][0]['description']
+    cloud=api['weather'][0]['main']
+    icon = api['weather'][0]['icon']
+    icon_url = f'https://openweathermap.org/img/wn/{icon}@2x.png'
+    return render(request,"index.html",{'temperature':temperature,"country":country,"city":city_name,"humidity":humidity,"weather":weather,"cloud":cloud, 'speed':speed, 'icon':icon_url})

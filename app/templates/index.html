@@ -13,13 +13,13 @@
     <h1 class="text-white text-2xl font-bold">Weather App</h1>
     <img src="{% static 'imgs/weather.png' %}"alt="">
     </div>
-    <form method="get" flex gap-3 justify-center">
+    <form method="get" flex gap-3 justify-center>
     
-        <input name="city" type="text"
+        <input name="city" type="text"placeholder="Enter the city required"
         class="rounded-full px-5 py-2">
         <button type="submit"><ion-icon name="search-outline" class="text-white text-2xl p-2 bg-white/20 rounded-full"></ion-icon></button>
     </form>
-    <div class="bg-white/20 flex p-3 gap-5"><div class="gap-5 flex flex-col"><div class="flex flex-col gap-2">
+    <div class="bg-white/20 flex p-3 gap-5 rounded-2xl"><div class="gap-5 flex flex-col"><div class="flex flex-col gap-2">
         
         <p class="text-white font-bold text 3xl">{{temperature}}&deg;C</p>
         <p class="text-white font-semibold text-sm">Now</p>
@@ -27,6 +27,48 @@
     <div class="text-white font-bold">{{city}},{{country}}</div>
 </div>
 <img src="{% static 'imgs/img.png' %}" alt="" class="w-22 h-28"></div>
+<div class="flex flex-row bg-[#1e97b1] backdrop-blur-2xl rounded-2xl p-3 text-white gap-5"id="top">
+    <div class="flex flex-col gap-20"id="bottom">
+        <img src="{{icon}}" alt="">
+        <div>
+            <p class="text-2xl font-bold text-white">{{cloud}}</p>
+            <p class="text-sm font-semibold">{{weather}}</p>
+            
+        </div>
+    </div>
+        <div class="bg-transparent gap-6 flex flex-col" id="rigth">
+            <div class="flex flex-row p-2 bg-white/20 rounded-lg gap-3" >
+                <ion-icon name="thermometer-outline"class="text-white text-2xl p-2 rounded-full"></ion-icon>
+                <div>
+                    <p class="text-white font-bold text 3xl">{{temperature}}&deg;C</p>
+                    <p class="text-white font-semibold text-sm">Temperature</p>
+                </div>
+
+            </div>
+            <div class="flex flex-row p-2 bg-white/20 rounded-lg gap-3" >
+                <ion-icon name="speedometer-outline" class="text-wite text-2xl p-2 rounded-full"></ion-icon>
+                <div>
+                    <p class="text-white font-bold text 3xl">{{speed}} m/s</p>
+                    <p class="text-white font-semibold text-sm">Wind Speed</p>
+
+                </div>
+
+            </div>
+           
+            
+            <div class="flex flex-row p-2 bg-white/20 rounded-lg gap-3" >
+                <ion-icon name="rainy-outline" class="text-wite text-2xl p-2 rounded-full"></ion-icon>
+                <div>
+                    <p class="text-white font-bold text 3xl">{{humidity}}%</p>
+                    <p class="text-white font-semibold text-sm">Humidity</p>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
         
 
 
